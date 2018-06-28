@@ -1,11 +1,14 @@
 <!doctype html>
 <head>
+    <meta charset="utf-8">
+    <title>Dungeons & Dinners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="./assets/images/D&D.png">
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|UnifrakturCook:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="icon" type="image/png" href="./assets/images/D&D.png">
 </head>
 
 <body>
@@ -14,13 +17,20 @@
 
     <body>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">   </a>              
+                    <a class="navbar-brand" href="#">   </a>
+                    <ul class="navbar-nav navbar-left">
+                            <li class="nav-item active" style:"display: inline block">
+                                <a class="nav-link mr-auto" id="favoriteNav" href="#"><i class="fas fa-star"></i> Favorites</a>
+                            </li>
+                      </ul>              
                             <div class="navbar-nav navbar-right ml-auto justify-content-end" id="navbarSupportedContent">
                               <ul class="navbar-nav navbar-right">
-                                <li class="nav-item active">
+                                <li class="nav-item active" style:"display: inline block">
+                                    <li class="nav-item active" >
                                     <a class="nav-link ml-auto" id="loginHere" href="#"><i class="fas fa-user-plus"></i> Login<span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item" id="userLoggedIn">
+                                <li class="nav-item active" style:"display: inline block">
+                                    <li class="nav-item" id="userLoggedIn" >
                                     <a class="nav-link" id="loggedInUser" href="#"><i class="fas fa-user-circle"></i>Logged In User</a>
                                     <span class="nav-item" id="signOutButton">
                                         <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i></a>
@@ -93,45 +103,50 @@
             <div class="row" id="noResults">
                     <div id="noResultsBox">No Results found for that Input!</div>
             </div>
-            <br>    
-            <div class="row d-flex justify-content-center" id="mainRandomResult">
-                <div class="w-75 card">
-                    <div class="card-header text-right">
-                        <span class="text-right" id="currentCuisine"></span>
-                        <span class="badge badge-info"  id="userRating"></span>
-                        <span class="text-right"></span><i class="fas fa-star" id="favorite" dataValue="restaurantID"></i></div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="mainRestaurantName">Restaurant Name</h5>
-                        <small class="text-muted" id="mainAddress">1000 W. Broad Street, Richmond VA 23220</small> • <small class="text-muted" id="mainCuisineType">Italian, BBQ</small> • <small class="text-muted" id="mainPriceResult">$$$</small>
-                        <br>
-                        <img id="mainVenuePic" src="">
-                        <a href="" id="phoneNumber"></a>                             
-                    </div>
-                    <div class="card-footer text-right">
-                        <a id="linkMenu" href="#"><small class="btn btn-warning">Get Menu <span class="ml-auto"><i class="fas fa-map"></i></small></a>
-                        <a id="linkDirections" href="#"><small id="getDirections" class="btn btn-primary">Get Directions <span class="ml-auto"><i class="fas fa-map-marker-alt"></i></small></a>
-                        <small id="reroll" class="btn btn-info">Reroll <span class="ml-auto"><i class="fas fa-dice"></i></small></span>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="card-columns" id="favoritesBox">
-
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header text-right">
+            <br>
+            <div id="mainRandomResult">
+                <div class="row d-flex justify-content-center" >
+                    <div class="w-75 card">
+                        <div class="card-header text-right">
+                            <span class="text-right" id="currentCuisine"></span>
+                            <span class="badge badge-info"  id="userRating"></span>
                             <span class="text-right"></span><i class="fas fa-star" id="favorite" dataValue="restaurantID"></i></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant Name</h5>
-                        <p class="card-text">1100 W. Broad Street, Richmond VA 23112</p>
-                        <p class="card-text">$$$</p>
-                    </div>
-                    <div class="card-footer">
-                            <small class="text-muted">Italian, BBQ</small>
+                        <div class="card-body">
+                            <h5 class="card-title" id="mainRestaurantName">Restaurant Name</h5>
+                            <small class="text-muted" id="mainAddress">1000 W. Broad Street, Richmond VA 23220</small> • <small class="text-muted" id="mainCuisineType">Italian, BBQ</small> • <small class="text-muted" id="mainPriceResult">$$$</small>
+                            <br>
+                            <img id="mainVenuePic" src="">
+                            <a href="" id="phoneNumber"></a>                             
+                        </div>
+                        <div class="card-footer text-right">
+                            <a id="linkMenu" href="#"><small class="btn btn-warning">Get Menu <span class="ml-auto"><i class="fas fa-map"></i></small></a>
+                            <a id="linkDirections" href="#"><small id="getDirections" class="btn btn-primary">Get Directions <span class="ml-auto"><i class="fas fa-map-marker-alt"></i></small></a>
+                            <small id="reroll" class="btn btn-info">Reroll <span class="ml-auto"><i class="fas fa-dice"></i></small></span>
+                        </div>
                     </div>
                 </div>
-
+            </div>    
+            <div class="card-columns" id="favoritesBox">
             </div>
 
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Favorites Selected</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>User must be logged in to add favorites!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+              </div>
+            </div>
         </div>    
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
